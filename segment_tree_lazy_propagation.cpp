@@ -18,7 +18,7 @@ void build(int idx,int low, int high,vector<int>&arr){
 void update(int idx, int low,int high, int l, int r, vector<int>&arr, int val){
     //update the previous update and and ask child to update itself whensoever
     if(lzy[idx]!=0){
-        seg[idx]+=(high-low +1)*val;
+        seg[idx]+=(high-low +1)*lzy[idx];
         if(low!=high){
             lzy[2*idx+1]+=val;
             lzy[2*idx+2]+=val;
